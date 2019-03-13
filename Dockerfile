@@ -4,7 +4,7 @@ MAINTAINER Shoma Kimura <m5182107.s@gmail.com>
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt update -qq && apt install -y -qq \
+RUN apt update && apt install -y --no-install-recommends \
     build-essential cmake clang ninja-build git \
     libboost-all-dev \
     libeigen3-dev \
@@ -12,6 +12,8 @@ RUN apt update -qq && apt install -y -qq \
     libvtk7-dev \
     libopenni-dev \
     && apt clean
+
+RUN git config --global http.sslVerify false
 
 RUN git clone -b pcl-1.9.1 --depth 1 https://github.com/PointCloudLibrary/pcl.git \
     && cd pcl \
