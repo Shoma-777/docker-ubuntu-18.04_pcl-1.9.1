@@ -20,4 +20,6 @@ RUN git clone -b pcl-1.9.1 --depth 1 https://github.com/PointCloudLibrary/pcl.gi
     && mkdir build && cd build \
     && cmake -G Ninja -D CMAKE_BUILD_TYPE=Release -D CMAKE_C_COMPILER=clang -D CMAKE_CXX_COMPILER=clang++ .. \
     && ninja && ninja install && ninja clean \
-    && ldconfig
+    && ldconfig \
+    && cd / && rm -rf /pcl
+    
