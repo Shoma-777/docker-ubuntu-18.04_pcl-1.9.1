@@ -10,6 +10,7 @@ RUN apt update && apt install -y --no-install-recommends \
     libeigen3-dev \
     libflann-dev \
     libvtk7-dev \
+    libvtk7-qt-dev \
     libopenni-dev \
     && apt clean
 
@@ -22,4 +23,4 @@ RUN git clone -b pcl-1.9.1 --depth 1 https://github.com/PointCloudLibrary/pcl.gi
     && ninja && ninja install && ninja clean \
     && ldconfig \
     && cd / && rm -rf /pcl
-    
+
