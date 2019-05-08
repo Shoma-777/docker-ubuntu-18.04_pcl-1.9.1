@@ -10,7 +10,6 @@ RUN apt update && apt install -y --no-install-recommends \
     libeigen3-dev \
     libflann-dev \
     libvtk7-dev \
-    libvtk7-qt-dev \
     libopenni-dev \
     && apt clean
 
