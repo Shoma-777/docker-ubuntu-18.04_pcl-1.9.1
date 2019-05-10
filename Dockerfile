@@ -9,8 +9,10 @@ RUN apt update && apt install -y --no-install-recommends \
     libboost-all-dev \
     libeigen3-dev \
     libflann-dev \
+    libqhull-dev \
     libvtk7-dev \
     libopenni-dev \
+    libopenni2-dev \
     && apt clean
 
 RUN git config --global http.sslVerify false
